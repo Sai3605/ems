@@ -10,20 +10,17 @@ module.exports.homelist = function(req, res) {
     name: 'Music Festival',
     address: 'Central Park, NY',
     rating: 5,
-    facilities: ['Audio/Visual Equipment', 'Food', 'Seating Available'],
-    distance: '100m'
+    facilities: ['Audio/Visual Equipment', 'Food', 'Seating Available']
     },{
     name: 'Art Exhibition',
     address: 'Art Gallery, SF',
     rating: 4,
-    facilities: ['Audio/Visual Equipment', 'Food'],
-    distance: '150m'
+    facilities: ['Audio/Visual Equipment', 'Food']
     },{
     name: 'Tech Conference',
     address: 'Convention Center, LA',
     rating: 3,
-    facilities: ['Food', 'Seating Available','Refreshments Available'],
-    distance: '300m'
+    facilities: ['Food', 'Seating Available','Refreshments Available']
     }]
     });
     };

@@ -1,53 +1,44 @@
 extends layout
 
 block content
-  .row.page-header(style="margin-bottom: 20px;") 
-    .col-lg-12
-      h1(style="margin-top: 20px;") Musical Festival
+  .container(style="margin-top: 40px;")
+    .row.align-items-center
+      .col-lg-12
+        h1.text-center(style="padding-bottom: 20px; border-bottom: 2px solid #ccc;") Musical Festival
 
-  .row
-    .col-xs-12.col-md-9
-      .row
-        .col-xs-12.col-sm-6
-          p.rating
-            span.glyphicon.glyphicon-star
-            span.glyphicon.glyphicon-star
-            span.glyphicon.glyphicon-star
-            span.glyphicon.glyphicon-star-empty
-            span.glyphicon.glyphicon-star-empty
-          p 123 Event Avenue, Event City, EC1 2AB
+    .row.mt-4
+      .col-md-7
+        .event-details-section.mb-4
+          h2(style="font-size: 24px; margin-bottom: 20px;") Event Information
+          .detail
+            span.label(label-primary) Date:
+            | &nbsp;27th September 2024
+          .detail
+            span.label(label-primary) Start Time:
+            | &nbsp;5:00 PM
+          .detail
+            span.label(label-primary) End Time:
+            | &nbsp;10:00 PM
 
-          .panel.panel-primary
-            .panel-heading
-              h2.panel-title Event Details
-            .panel-body
-              p Event Date: 27th September 2024
-              p Start Time: 5:00 PM
-              p End Time: 10:00 PM
-          .panel.panel-primary
-            .panel-heading
-              h2.panel-title Facilities
-            .panel-body
-              span.label.label-warning
-                span.glyphicon.glyphicon-ok
-                | &nbsp;Audio/Visual Equipment
-              | &nbsp;
-              span.label.label-warning
-                span.glyphicon.glyphicon-ok
-                | &nbsp;Seating Available
-              | &nbsp;
-              span.label.label-warning
-                span.glyphicon.glyphicon-ok
-                | &nbsp;Refreshments Available
-              | &nbsp;
-        .col-xs-12.col-sm-6.location-map
-          .panel.panel-primary
-            .panel-heading
-              h2.panel-title Location map
-            .panel-body
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121857.4486079729!2d78.42400630611411!3d17.3615545821799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb978a6e1a939b%3A0xcb5a69e4aaf113fb!2sCharminar!5e0!3m2!1sen!2sin!4v1727412298175!5m2!1sen!2sin" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      
-      .row
+        .facilities-section.mt-5
+          h2(style="font-size: 24px; margin-bottom: 20px;") Available Facilities
+          ul.facility-list
+            li(style="margin-bottom: 10px;")
+              span.glyphicon.glyphicon-ok-circle.text-success
+              | &nbsp;Audio/Visual Equipment
+            li(style="margin-bottom: 10px;")
+              span.glyphicon.glyphicon-ok-circle.text-success
+              | &nbsp;Seating Available
+            li(style="margin-bottom: 10px;")
+              span.glyphicon.glyphicon-ok-circle.text-success
+              | &nbsp;Refreshments Available
+
+      .col-md-5
+        .location-map-section.mb-4
+          h2(style="font-size: 24px; margin-bottom: 20px;") Location Map
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.045081957956!2d78.47208957547281!3d17.361563583521228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb978a6e1a939b%3A0xcb5a69e4aaf113fb!2sCharminar!5e0!3m2!1sen!2sin!4v1729173478370!5m2!1sen!2sin" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    .row
         .col-xs-12
           .panel.panel-primary.review-panel
             .panel-heading
@@ -63,7 +54,7 @@ block content
                       span.glyphicon.glyphicon-star
                       span.glyphicon.glyphicon-star
                       span.glyphicon.glyphicon-star
-                    span.reviewAuthor Vijay
+                    span.reviewAuthor Simon Holmes
                     small.reviewTimestamp 16 July 2024
                   .col-xs-12
                     p What a great time. I enjoyed a lot throughout this event
@@ -76,13 +67,9 @@ block content
                       span.glyphicon.glyphicon-star
                       span.glyphicon.glyphicon-star-empty
                       span.glyphicon.glyphicon-star-empty
-                    span.reviewAuthor Raju
+                    span.reviewAuthor Charlie Chaplin
                     small.reviewTimestamp 16 June 2024
                   .col-xs-12
                     p The event was very good
-    .col-xs-12.col-md-3
-      p.lead
-        | If you've attended this event and enjoyed it, or if you have feedback, please leave a review to help others like you!
-      p
-        | The Event Management System is designed to help you find and manage events easily.
-        | Stay updated on upcoming events and their details!
+     .col-xs-12.col-md-3
+      

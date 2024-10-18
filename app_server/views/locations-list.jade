@@ -10,6 +10,7 @@ block content
 
   .container.mt-5
     .row
+      // Main content for events information
       .col-md-8
         .row
           each location in locations
@@ -17,16 +18,50 @@ block content
               .card.shadow-sm
                 .card-body
                   h4.card-title.mb-2
-                    a(href="/locations")= location.name
+                    a(href='/locations')= location.name
                   p.text-muted.mb-1
                     outputRating(location.rating)
                     span.badge.badge-secondary.float-right= location.distance
                   
                   p.mb-3.address= location.address
+                  p.mb-0.date
+                    | Event Date: #{location.date}
+                  
+                  p.description.mt-2
+                    | #{location.description}
                   
                   p.mb-0
                     each facility in location.facilities
                       span.badge.badge-warning.mr-2= facility
 
+      // Sidebar with additional events info or filtering options
       .col-md-4
-       
+        .card.shadow-sm.mb-4(style="padding: 20px; background-color: #f9f9f9; border-radius: 10px;")
+          .card-body
+            h4 Filter Events
+            p Filter by category, date, or location to find the events you want.
+
+            form
+              div.form-group
+                label(for="category") Category
+                select.form-control#category
+                  option All Categories
+                  option Music
+                  option Arts
+                  option Technology
+              
+              div.form-group
+                label(for="location") Location
+                select.form-control#location
+                  option All Locations
+                  option Charminar
+                  option DSL Virtue Mall 
+                  option Next Galleria Mall
+
+              div.form-group
+                label(for="date") Date
+                input.form-control#date(type="date")
+
+              button.btn.btn-primary.mt-3(type="submit") Apply Filters
+         
+
